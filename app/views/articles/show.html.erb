@@ -1,44 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="form-horizontal">
 
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
+  <label  class="col-xs-2 control-label">タイトル：</label>
+  <p class="form-control-static"><%= @article.title %></p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @article.status %>
-</p>
+  <label  class="col-xs-2 control-label">本文：</label>
+  <p class="form-control-static"><%= @article.body %></p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @article.category %>
-</p>
+  <label  class="col-xs-2 control-label">公開ステータス：</label>
+  <p class="form-control-static"><%= @article.status %></p>
 
-<p>
-  <strong>Link:</strong>
-  <%= @article.link %>
-</p>
+  <label  class="col-xs-2 control-label">記事カテゴリー：</label>
+  <p class="form-control-static"><%= @article.category %></p>
 
-<p>
-  <strong>Img dir:</strong>
-  <%= @article.img_dir %>
-</p>
+  <label  class="col-xs-2 control-label">リンク：</label>
+  <p class="form-control-static"><%= @article.link %></p>
 
-<p>
-  <strong>Display at:</strong>
-  <%= @article.display_at %>
-</p>
+  <label  class="col-xs-2 control-label">イメージ：</label>
+  <p class="form-control-static"><%= @article.img_dir %></p>
 
-<p>
-  <strong>Created at:</strong>
-  <%= @article.created_at %>
-</p>
+  <label  class="col-xs-2 control-label">表示日時：</label>
+  <p class="form-control-static"><%= @article.display_at %></p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+</div>
+
+<br>
+
+<div type="button" class="btn btn-warning"><%= link_to '編集', edit_article_path(@article) %></div>
+<div type="button" class="btn btn-primary"><%= link_to '戻る', articles_path %></div>

@@ -11,45 +11,45 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+<div class="form-horizontal">
+    <div class="form-group row">
+    <label  class="col-xs-2 control-label">タイトル：</label>
+    <div class="col-xs-6"><input  class="form-control"  type="text" value="<%= article.title %>" name="article[title]" id="article_title" /></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_field :body %>
-  </div>
+    <div class="form-group row">
+    <label  class="col-xs-2 control-label">記事カテゴリ：</label>
+    <div class="form-control-static"><%= f.number_field :category %></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.check_box :status %>
-  </div>
+    <div class="form-group row">
+    <label  class="col-xs-2 control-label">リンク：</label>
+    <div class="col-xs-6"><input  class="form-control"  type="text" value="<%= article.link %>" name="article[link]" id="article_link" /></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :category %>
-    <%= f.number_field :category %>
-  </div>
+    <div class="form-group row">
+   <label  class="col-xs-2 control-label"> イメージリンク：</label>
+    <div class="col-xs-6"><input  class="form-control"  type="text" value="<%= article.img_dir %>" name="article[img_dir]" id="article_img_dir" /></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :link %>
-    <%= f.text_field :link %>
-  </div>
+    <div class="form-group row">
+    <label  class="col-xs-2 control-label">表示日時：</label>
+    <div class="form-control-static"><%= f.datetime_select :display_at , {:class => "form-aaa"} %></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :img_dir %>
-    <%= f.text_field :img_dir %>
-  </div>
+    <div class="form-group row">
+    <label  class="col-xs-2 control-label">公開ステータス：</label>
+    <div class="form-control-static"><%= f.check_box :status %></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :display_at %>
-    <%= f.datetime_select :display_at %>
-  </div>
+    <div class="form-group row">
+    <label  class="col-xs-2 control-label">本文：</label>
+    <div class="col-sm-10">
+      <textarea  name="article[body]" class="form-control"  id="article_body" rows="5"><%= article.body %></textarea>
+    </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :created_at %>
-    <%= f.datetime_select :created_at %>
-  </div>
+</div>
 
   <div class="actions">
     <%= f.submit %>
