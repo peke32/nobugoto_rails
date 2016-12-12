@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @statuses = Status.all
+    @categories = Category.all
   end
 
   # GET /articles/1
@@ -15,10 +17,14 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @status = Status.new
+    @category = Category.new
   end
 
   # GET /articles/1/edit
   def edit
+    @status = Status.new
+    @category = Category.new
   end
 
   # POST /articles
@@ -65,6 +71,8 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+      @statuses = Status.all.pluck(:status, :id)
+      @categories = Category.all.pluck(:category, :id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
